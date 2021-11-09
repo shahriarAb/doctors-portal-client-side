@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import logo from './../../images/dental.png';
 
 const Navigation = () => {
     const { user, logOut } = useAuth();
@@ -25,9 +26,12 @@ const Navigation = () => {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        Doctors Portal
-                    </Typography>
+                    <Box sx={{ display: 'flex', flexGrow: 1 }}>
+                        <img style={{ width: 80 }} src={logo} alt="dental logo" />
+                        <Typography sx={{ mt: 2 }} variant="h5" component="div">
+                            Doctors Portal Dental Clinic
+                        </Typography>
+                    </Box>
                     <NavLink style={{ color: 'white', textDecoration: 'none' }} to="/appointment"><Button color="inherit">Appointment</Button></NavLink>
                     <NavLink style={{ color: 'white', textDecoration: 'none' }} to="/dashboard"><Button color="inherit">Dashboard</Button></NavLink>
                     {

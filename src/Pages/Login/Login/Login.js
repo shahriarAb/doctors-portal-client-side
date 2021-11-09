@@ -9,6 +9,7 @@ const Login = () => {
     const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();
     const location = useLocation();
     const history = useHistory();
+    document.title = "Login - Doctors Portal Dental Clinic";
 
     const handleOnBlur = e => {
         const field = e.target.name;

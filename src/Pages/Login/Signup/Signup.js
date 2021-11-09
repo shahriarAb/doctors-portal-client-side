@@ -8,6 +8,7 @@ const Signup = () => {
     const [registerData, setRegisterData] = useState({});
     const location = useLocation();
     const history = useHistory();
+    document.title = "Register - Doctors Portal Dental Clinic";
 
     const { user, registerUser, signInWithGoogle, isLoading, authError, } = useAuth();
 

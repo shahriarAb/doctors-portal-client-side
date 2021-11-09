@@ -5,6 +5,7 @@ import Appointments from '../Appointments/Appointments';
 
 const DashboardHome = () => {
     const [date, setDate] = React.useState(new Date());
+    document.title = "Dashboard - Doctors Portal Dental Clinic";
 
     return (
         <Grid container spacing={2}>

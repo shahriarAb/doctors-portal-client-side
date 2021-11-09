@@ -8,6 +8,7 @@ const MakeAdmin = () => {
     const [email, setEmail] = useState('');
     const [success, setSuccess] = useState(false);
     const { token } = useAuth();
+    document.title = "Make Admin - Doctors Portal Dental Clinic";
 
     const handleOnBlur = e => {
         setEmail(e.target.value);

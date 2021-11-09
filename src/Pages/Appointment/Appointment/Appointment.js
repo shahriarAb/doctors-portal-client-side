@@ -6,6 +6,8 @@ import AvailableAppointments from '../AvailableAppointments/AvailableAppointment
 
 const Appointment = () => {
     const [date, setDate] = React.useState(new Date());
+    document.title = "Appointment - Doctors Portal Dental Clinic";
+
     return (
         <div>
             <Navigation></Navigation>
