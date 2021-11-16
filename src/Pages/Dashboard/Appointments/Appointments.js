@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useState, useEffect } from 'react';
 import useAuth from './../../../hooks/useAuth';
@@ -9,6 +9,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { Link } from 'react-router-dom';
 
 const Appointments = ({ date }) => {
     const { user, token } = useAuth()
@@ -55,7 +56,12 @@ const Appointments = ({ date }) => {
                                 </TableCell>
                                 <TableCell align="right">{row.serviceName}</TableCell>
                                 <TableCell align="right">{row.time}</TableCell>
-                                <TableCell align="right"></TableCell>
+                                <TableCell align="right">{row.payment ?
+                                    <Typography sx={{ backgroundColor: 'lightgreen', py: 0.5, pr: 3, borderRadius: 1 }}>Paid</Typography>
+                                    :
+                                    <Link to={`dashboard/payment/${row._id}`} style={{ textDecoration: 'none' }}>
+                                        <Button sx={{ py: 0.5 }} variant="contained" color="error">Pay</Button></Link>
+                                }</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
