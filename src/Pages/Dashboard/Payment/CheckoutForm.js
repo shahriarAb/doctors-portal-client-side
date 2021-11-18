@@ -15,7 +15,7 @@ const CheckoutForm = ({ appointment }) => {
     const { user } = useAuth()
 
     useEffect(() => {
-        fetch('http://localhost:5500/create-payment-intent', {
+        fetch('https://powerful-mountain-98726.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -85,7 +85,7 @@ const CheckoutForm = ({ appointment }) => {
                 last4Dgt: paymentMethod.card.last4,
                 transaction: paymentIntent.client_secret.slice('_sercet')[0]
             }
-            const url = `http://localhost:5500/appointments/${_id}`
+            const url = `https://powerful-mountain-98726.herokuapp.com/appointments/${_id}`
             fetch(url, {
                 method: 'PUT',
                 headers: {

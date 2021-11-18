@@ -16,7 +16,7 @@ const Payment = () => {
     document.title = "Payment"
 
     useEffect(() => {
-        fetch(`http://localhost:5500/appointments/${appointmentId}`)
+        fetch(`https://powerful-mountain-98726.herokuapp.com/appointments/${appointmentId}`)
             .then(res => res.json())
             .then(data => setAppointment(data));
     }, [appointmentId]);

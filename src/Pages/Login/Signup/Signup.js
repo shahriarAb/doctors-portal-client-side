@@ -1,13 +1,13 @@
 import { Container, Grid, Typography, TextField, Button, Box, CircularProgress, Alert, AlertTitle } from '@mui/material';
 import React, { useState } from 'react';
-import { NavLink, useLocation, useHistory } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import loginimg from '../../../images/login.png';
 import useAuth from '../../../hooks/useAuth';
 
 const Signup = () => {
     const [registerData, setRegisterData] = useState({});
     const location = useLocation();
-    const history = useHistory();
+    const navigate = useNavigate();
     document.title = "Register - Doctors Portal Dental Clinic";
 
     const { user, registerUser, signInWithGoogle, isLoading, authError, } = useAuth();
@@ -25,12 +25,12 @@ const Signup = () => {
             alert('password did not match!');
             return
         }
-        registerUser(registerData.userName, registerData.email, registerData.password, location, history);
+        registerUser(registerData.userName, registerData.email, registerData.password, location, navigate);
         e.preventDefault();
     }
 
     const handleGoogleSignIn = () => {
-        signInWithGoogle(location, history);
+        signInWithGoogle(location, navigate);
     }
 
     return (

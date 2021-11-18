@@ -1,6 +1,6 @@
 import { Container, Grid, Typography, TextField, Button, Box, CircularProgress, Alert, AlertTitle } from '@mui/material';
 import React, { useState } from 'react';
-import { NavLink, useLocation, useHistory } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import loginimg from '../../../images/login.png'
 
@@ -8,7 +8,7 @@ const Login = () => {
     const [loginData, setLoginData] = useState({});
     const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();
     const location = useLocation();
-    const history = useHistory();
+    const navigate = useNavigate();
     document.title = "Login - Doctors Portal Dental Clinic";
 
     const handleOnBlur = e => {
@@ -20,13 +20,13 @@ const Login = () => {
     }
 
     const handleLoginSubmit = e => {
-        loginUser(loginData.email, loginData.password, location, history);
+        loginUser(loginData.email, loginData.password, location, navigate);
 
         e.preventDefault();
     }
 
     const handleGoogleSignIn = () => {
-        signInWithGoogle(location, history);
+        signInWithGoogle(location, navigate);
     }
 
     return (

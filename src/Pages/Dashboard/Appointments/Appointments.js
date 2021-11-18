@@ -59,7 +59,7 @@ const Appointments = ({ date }) => {
                                 <TableCell align="right">{row.payment ?
                                     <Typography sx={{ backgroundColor: 'lightgreen', py: 0.5, pr: 3, borderRadius: 1 }}>Paid</Typography>
                                     :
-                                    <Link to={`dashboard/payment/${row._id}`} style={{ textDecoration: 'none' }}>
+                                    <Link to={`/dashboard/payment/${row._id}`} style={{ textDecoration: 'none' }}>
                                         <Button sx={{ py: 0.5 }} variant="contained" color="error">Pay</Button></Link>
                                 }</TableCell>
                             </TableRow>
